@@ -13,7 +13,7 @@ package easy_level;
  * 
  * @author xinghu
  *
- *Could you do it without any loop/recursion in O(1) runtime?
+ *         Could you do it without any loop/recursion in O(1) runtime?
  */
 
 // this question also name "digital root" in Wikipedia
@@ -22,10 +22,10 @@ public class AddDigits_258 {
 	public static void main(String[] args) {
 
 		AddDigits_258 object = new AddDigits_258();
-		System.out.print("1:  "+object.addDigits1(38));
+		System.out.print("1:  " + object.addDigits1(38));
 	}
 
-	//Runtime: 5 ms beats2.09%
+	// Runtime: 5 ms beats2.09%
 	public int addDigits1(int num) {
 		int a = add1(num);
 		while (a >= 10) {
@@ -37,7 +37,9 @@ public class AddDigits_258 {
 	public int add1(int nn) {
 		int a = 0;
 		for (int i = String.valueOf(nn).length(); i >= 0; i--) {
-			int b = (int) (nn / Math.pow(10, i)); // Return the value of the number 10 to the power of i 
+			int b = (int) (nn / Math.pow(10, i)); // Return the value of the
+													// number 10 to the power of
+													// i
 			a += b;
 			nn = (int) (nn - b * Math.pow(10, i));
 		}
