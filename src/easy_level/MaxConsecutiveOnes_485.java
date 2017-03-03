@@ -17,19 +17,17 @@ public class MaxConsecutiveOnes_485 {
 
 	public static void main(String[] args) {
 		MaxConsecutiveOnes_485 mso = new MaxConsecutiveOnes_485();
-		int[] a = { 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1 };
-		System.out.println(mso.findMaxConsecutiveOnes(a) + " final");
+		int[] a = { 0};
+		System.out.println(mso.findMaxConsecutiveOnes2(a) + " final");
 
 	}
 
 	//runtime 24ms beat 2.49%
 	public int findMaxConsecutiveOnes(int[] nums) {
-
 		if (nums.length == 0)  return 0;
 		ArrayList<Integer> temp = new ArrayList<Integer>();
 
 		int max = 0;
-
 		for (int i = 0; i < nums.length; i++) {
 			if (nums[i] == 1) {
 				temp.add(nums[i]);
@@ -40,7 +38,31 @@ public class MaxConsecutiveOnes_485 {
 				temp.clear();
 			}
 		}
-
 		return (max > temp.size() ? max : temp.size());
 	}
+	
+	
+	//using a counter instead of a arraylist to save space
+	//runtime: 11ms beats 51.49%
+	public int findMaxConsecutiveOnes2(int[] nums) {
+		
+		int counter = 0; 
+		
+		if (nums.length == 0)  return 0;
+
+		int max = 0;
+		for (int i = 0; i < nums.length; i++) {
+			if (nums[i] == 1) {
+				counter = counter + 1;
+			} else {
+				if (max <= counter) {
+					max = counter;
+				}
+				counter = 0;
+			}
+		}
+		return (max > counter ? max : counter);
+		
+	}
+
 }
