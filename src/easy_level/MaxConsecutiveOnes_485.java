@@ -17,8 +17,8 @@ public class MaxConsecutiveOnes_485 {
 
 	public static void main(String[] args) {
 		MaxConsecutiveOnes_485 mso = new MaxConsecutiveOnes_485();
-		int[] a = { 0};
-		System.out.println(mso.findMaxConsecutiveOnes2(a) + " final");
+		int[] a = { 1,1,1,1,0,1,1,1,1,0,1,1,1};
+		System.out.println(mso.findMaxConsecutiveOnes3(a) + " final");
 
 	}
 
@@ -62,7 +62,20 @@ public class MaxConsecutiveOnes_485 {
 			}
 		}
 		return (max > counter ? max : counter);
-		
 	}
 
+	// runtime: 10ms  beats: 67.40%
+	public int findMaxConsecutiveOnes3(int[] nums) {
+		int max = 0, cur = 0;
+		for(int n: nums){
+			if(n==1){
+				
+				cur = cur+1;
+			}else{
+				max = max>=cur? max : cur;
+				cur = 0;
+			}
+		}
+		return max>cur ? max : cur;
+	}
 }
