@@ -12,3 +12,8 @@ Common Java Method Summary
    Character.isLowerCase(c);
    Character.isUpperCase(c);
    
+5. String - char[] conversion
+   
+   char[] cs = s.toCharArray();
+   String s = String.valueof(cs); 
+   
