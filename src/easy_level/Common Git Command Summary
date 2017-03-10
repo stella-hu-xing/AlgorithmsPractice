@@ -1,1 +1,10 @@
 Common Git Command Summary
+
+	1. Add all the changed files in to staged files
+	 " git add . "
+	
+	2. Commit all staged files and add commit message 
+	 " git commit -m "message"
+	
+	3. Push all the changes into origin (all, no matter which branch)
+    "git push origin"
