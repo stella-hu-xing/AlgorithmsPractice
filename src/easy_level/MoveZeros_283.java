@@ -18,22 +18,21 @@ public class MoveZeros_283 {
 	public static void main(String[] args) {
 		MoveZeros_283 mz = new MoveZeros_283();
 
-		int[] a = { 0, 1, 0, 2 };
-		mz.moveZeroes2(a);
+		int[] a = { 1,0 };
+		mz.moveZeroes(a);
 		for (int i = 0; i < a.length; i++) {
 			System.out.print(a[i] + " ");
 		}
 	}
 
 	// runtime: 1ms beats 17.62%
-	public void moveZeroes(int[] nums) {
-		if (nums.length == 0 || nums.length == 1)
-			return;
+	public void moveZeroes(int[] nums){
+		if(nums.length==0||nums.length==1) return;
 		int increase = 0;
 		for (int i = 0; i < nums.length; i++) {
 			if (nums[i] != 0) {
-				nums[increase] = nums[i];
-				increase++;
+				nums[increase++] = nums[i];
+				
 			}
 		}
 		for (int i = increase; i < nums.length; i++) {
@@ -41,6 +40,7 @@ public class MoveZeros_283 {
 		}
 	}
 	
+
 	// runtime: 1ms beats 17.62%
 	public void moveZeroes2(int[] nums){
 	      int counter =0;
@@ -52,5 +52,21 @@ public class MoveZeros_283 {
 	  			counter++;
 	  		}
 	  	}
+	}
+	
+	// runtime: 0ms beats 69.67%
+	//only delete the extra statement ...improve 50%
+	public void moveZeroes3(int[] nums) {
+		
+		int increase = 0;
+		for (int i = 0; i < nums.length; i++) {
+			if (nums[i] != 0) {
+				nums[increase++] = nums[i];
+				
+			}
+		}
+		for (int i = increase; i < nums.length; i++) {
+			nums[i] = 0;
+		}
 	}
 }
