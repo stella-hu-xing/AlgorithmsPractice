@@ -18,14 +18,14 @@ public class MoveZeros_283 {
 	public static void main(String[] args) {
 		MoveZeros_283 mz = new MoveZeros_283();
 
-		int[] a = { 0,1,0,2};
-		mz.moveZeroes(a);
+		int[] a = { 0, 1, 0, 2 };
+		mz.moveZeroes2(a);
 		for (int i = 0; i < a.length; i++) {
 			System.out.print(a[i] + " ");
 		}
 	}
 
-	//runtime:  1ms  beats 17.62%
+	// runtime: 1ms beats 17.62%
 	public void moveZeroes(int[] nums) {
 		if (nums.length == 0 || nums.length == 1)
 			return;
@@ -33,16 +33,24 @@ public class MoveZeros_283 {
 		for (int i = 0; i < nums.length; i++) {
 			if (nums[i] != 0) {
 				nums[increase] = nums[i];
-				
 				increase++;
-			
 			}
 		}
-
 		for (int i = increase; i < nums.length; i++) {
-			
-				nums[i] = 0;
-			
+			nums[i] = 0;
 		}
+	}
+	
+	// runtime: 1ms beats 17.62%
+	public void moveZeroes2(int[] nums){
+	      int counter =0;
+	  	for (int i = 0; i < nums.length; i++) {
+	  		if(nums[i]!=0){
+	  			int temp = nums[i];
+	  			nums[i]=nums[counter];
+	  			nums[counter]=temp;
+	  			counter++;
+	  		}
+	  	}
 	}
 }
