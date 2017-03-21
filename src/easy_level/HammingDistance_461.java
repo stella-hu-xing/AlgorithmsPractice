@@ -22,7 +22,7 @@ public class HammingDistance_461 {
 
 	public static void main(String[] args) {
 		HammingDistance_461 hd = new HammingDistance_461();
-		System.out.println(hd.hammingDistance(1, 4));
+		System.out.println(hd.hammingDistance3(1, 4));
 	}
 	
 	//Runtime: 12 ms  beats 39.34%
@@ -40,5 +40,15 @@ public class HammingDistance_461 {
 	//Runtime: 12 ms  beats 39.34%  related to the web speed
 	public int hammingDistance2(int x, int y) {
 		return Integer.bitCount(x^y);
+	}
+	
+	//learnt from leetcode sample solution
+	public int hammingDistance3(int x,int y){
+		int cur = x^y, count = 0;
+		while(cur !=0){
+			cur &= (cur-1);
+			count++;
+		}
+		return count;
 	}
 }
