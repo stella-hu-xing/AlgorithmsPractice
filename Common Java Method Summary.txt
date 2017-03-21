@@ -17,3 +17,6 @@ Common Java Method Summary
    char[] cs = s.toCharArray();
    String s = String.valueof(cs); 
    
+6.  count the number of one-bits in the two's complement binary representation of the specified int value. 
+
+	Integer.bitCount(a)
