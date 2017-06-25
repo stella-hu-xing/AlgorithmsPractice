@@ -20,3 +20,5 @@ Common Java Method Summary
 6.  count the number of one-bits in the two's complement binary representation of the specified int value. 
 
 	Integer.bitCount(a)
+	
+7. HashSet cannot contain duplicate items
