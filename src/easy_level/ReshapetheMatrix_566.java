@@ -32,7 +32,9 @@ public class ReshapetheMatrix_566 {
 	public static void main(String[] args) {
 		ReshapetheMatrix_566 rm = new ReshapetheMatrix_566();
 		int[][] nums = { { 1, 2 }, { 3, 4 }, { 5, 6 } };
-		System.out.println(rm.matrixReshape(nums, 2, 3));
+		int[][] a =rm.matrixReshape2(nums, 2, 3);
+	
+		System.out.println(a);
 
 	}
 
@@ -64,4 +66,30 @@ public class ReshapetheMatrix_566 {
 
 	}
 
+	// a smarter approach Runtime: 8 ms, beats 62.71%
+	public int[][] matrixReshape2(int[][] nums, int r, int c) {
+		int a = nums.length, b = nums[0].length;
+		if (a * b != r * c) {
+			return nums;
+		} else {
+			int[][] result = new int[r][c];
+			int conta = 0, contb = 0;
+			for (int i = 0; i < a; i++) {
+				for (int j = 0; j < b; j++) {
+					result[conta][contb] = nums[i][j];
+					System.out.println("result " + conta+ " "+ contb+": "+result[conta][contb]);
+					if (contb == c-1) {
+						conta++;
+						contb = 0;
+					} else {
+						contb++;
+					}
+					
+				}
+				
+			}
+			return result;
+		}
+
+	}
 }
