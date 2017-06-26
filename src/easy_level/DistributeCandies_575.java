@@ -6,6 +6,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
+ * 简单，就说要考虑time complexity
  * Given an integer array with even length, where different numbers in this
  * array represent different kinds of candies. Each number means one candy of
  * the corresponding kind. You need to distribute these candies equally in
