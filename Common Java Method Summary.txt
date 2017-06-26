@@ -1,6 +1,10 @@
 Common Java Method Summary
 
 1. string converting to Int
+	  Integer.parstInt()
+	  Integer.valueOf()
+   Int converting to String
+      String.valueOf(number)
 
 2. Binary - Decimal conversion
 
@@ -22,3 +26,7 @@ Common Java Method Summary
 	Integer.bitCount(a)
 	
 7. HashSet cannot contain duplicate items
+
+8. check a char(in string) is a digit or a letter
+	Character.isDigit(string.charAt(index)) // will return true if it's a digit
+	Character.isLetter(string.charAt(index)) //will return true if it's a letter
