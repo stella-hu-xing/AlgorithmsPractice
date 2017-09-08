@@ -2,6 +2,7 @@ package codility;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 /*
  * given an array A consisting of N integers fulfilling the above conditions, returns the value of the unpaired element.
@@ -23,14 +24,13 @@ public class SingleNumber {
 	}
 
 	public int solution(int[] A) {
-
-		ArrayList<Integer> list = new ArrayList<Integer>();
+		Arrays.sort(A);
+		List<Integer> list = new ArrayList<Integer>();
 		for (int item : A) {
 			if (!list.contains(item)) {
 				list.add(item);
 			} else {
-				int index = list.indexOf(item);
-				list.remove(list.get(index));
+				list.remove(list.size() == 1 ? list.get(0) : list.get(1));
 			}
 		}
 		return list.get(0);
