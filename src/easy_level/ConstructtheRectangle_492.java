@@ -1,5 +1,10 @@
 package easy_level;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Arrays;
+
 /**
  * For a web developer, it is very important to know how to design a web page's
  * size. So, given a specific rectangular web page’s area, your job by now is to
@@ -29,9 +34,16 @@ public class ConstructtheRectangle_492 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		ConstructtheRectangle_492 cr = new ConstructtheRectangle_492();
-		int[]  re = cr.constructRectangle(10);
-		System.out.println(re[0]+"   "+re[1]);
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		try {
+			String line = br.readLine();
+			System.out.print("输出"+Integer.parseInt(line));
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
 	
