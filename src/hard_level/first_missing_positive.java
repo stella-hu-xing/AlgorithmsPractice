@@ -39,7 +39,7 @@ public class first_missing_positive {
 
 			}
 		}
-		System.out.println(list);
+		if(list.size()==0) return 1;
 		for(int v=0;v<list.size();v++){
 			if(list.get(v)!= v+1){
 				return v+1;
