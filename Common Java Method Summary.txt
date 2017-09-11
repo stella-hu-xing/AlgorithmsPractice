@@ -30,3 +30,15 @@ Common Java Method Summary
 8. check a char(in string) is a digit or a letter
 	Character.isDigit(string.charAt(index)) // will return true if it's a digit
 	Character.isLetter(string.charAt(index)) //will return true if it's a letter
+	
+9. Java array get sum
+	int sum = Arrays.stream(arr).sum();
+
+10. Java array get sorted
+	Arrays.sort(array);
+
+11. Java array get the max value
+	Arrays.stream(A).max().getAsInt();
+
+12. Java array initialize with same number
+	Arrays.fill(myarray, 42);
