@@ -20,11 +20,11 @@ import java.util.Set;
  * @author xinghu
  *
  */
-public class first_missing_positive {
+public class first_missing_positive_41 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		first_missing_positive cdt = new first_missing_positive();
+		first_missing_positive_41 cdt = new first_missing_positive_41();
 		int[] A = { 1 };
 		System.out.println("final:" + cdt.solution(A));
 	}
