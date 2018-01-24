@@ -3,7 +3,7 @@ Common Java Method Summary
 1. String <==> Int
    string converting to Int
 	  Integer.parstInt()
-	  Integer.valueOf()
+	  Integer.valueOf(): not the same answer (need to -48)
    Int converting to String
       String.valueOf(number)
 
